@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Nutrition Information</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+
+    <style>
+        body {
+            font-family: Manrope, sans-serif;
+            background-color:  #FDFAEC;
+        }
+
+        .navbar-brand {
+            font: bold;
+        }
+
+        .navbar {
+            background-color: #E4E4D0;
+            color: #004225;
+        }
+
+        .nav-link {
+            color: #004225;
+        }
+
+        .nav-item.active .nav-link {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .navbar-nav .nav-link:hover {
+            background-color: #004225;
+            color: #E4E4D0;
+            border-radius: 0.25rem;
+        }
+
+        .info-div {
+            max-width: 45rem;
+            margin: auto;
+            margin-top: 5rem;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 0.35rem;
+            text-align: center;
+        }
+
+        h4 {
+            color: #2E8A99;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .welcome-user {
+            font-weight: 600;
+            color: #2E8A99;
+            
+        }
+
+        .footer p{
+            color: #004225;
+            font-size: 14px; 
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0.5rem;
+            right: 2rem;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <span class="navbar-brand mb-0 h1">  CookEaseAI  </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="view_nutrition_info">View Nutrition Info</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown"> <!-- Add the 'dropdown' class to create a dropdown -->
+                    <a class="nav-link dropdown-toggle welcome-user" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Welcome, {{ username }}!
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <!-- Dropdown items go here -->
+                        <a class="dropdown-item" href="#">Setting</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="info-div">
+        <h4>Nutrition Intake Breakdown</h4>
+        <p>Total Calories: {{ total_calories }}</p>
+        <p>Total Protein: {{ total_protein }}</p>
+        <p>Total Carbohydrates: {{ total_carbs }}</p>
+        <p>Total Fat: {{ total_fat }}</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <footer class="footer">
+       <p>&copy; 2023 Annemarie Xia. All rights reserved.</p>
+    </footer>
+</body>
+</html>

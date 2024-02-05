@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to CookEaseAI!</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <style>
+        body {
+            font-family: Manrope, sans-serif;
+            background-color:  #FDFAEC;
+        }
+        .main-container {
+            padding-top: 80px;
+            padding-left: 150px;
+            font-family: 'Manrope', sans-serif;
+        }
+        .heading {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .recipe-container {
+            display: flex;
+            flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .recipe-item-container {
+            /*flex: 1 1 25%;*/
+            text-align: center;
+            margin: 10px;
+            white-space: nowrap; /* Prevent text from wrapping */
+            text-overflow: ellipsis; /* Add an ellipsis (...) for overflow */
+            border: 1px solid #ccc; /* Add a border to better visualize the container */
+            padding: 1rem;
+            background-color: #E4E4D0;
+            border-radius: 0.25rem;
+        }
+
+        .btn-primary {
+            background-color: #2E8A99;
+            border-color:#2E8A99;
+        }
+
+        .navbar-brand {
+            font: bold;
+        }
+
+        .navbar {
+            background-color: #E4E4D0;
+            color: #004225;
+        }
+
+        .nav-link {
+            color: #004225;
+        }
+
+        .navbar .navbar-nav .nav-link:hover {
+            background-color: #004225;
+            color: #E4E4D0;
+            border-radius: 0.25rem;
+        }
+        
+        .nav-item.active .nav-link {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-text::placeholder {
+          color: #CACACA;
+        }
+
+        h3 {
+            display: flex;
+            padding-left: 14.75rem;
+            padding-top: 5rem;
+            color: #2E8A99
+
+        }
+        
+        .login-form {
+            display: flex;
+            padding-left: 15rem;
+            padding-top: 1rem;
+        }
+        form {
+            width: 20rem;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0.5rem;
+            right: 2rem;
+            color: #004225;
+            font-size: 14px; /* Adjust the font size as needed */
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <span class="navbar-brand mb-0 h1">  CookEaseAI  </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <!-- <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="view_nutrition_info">View Nutrition Info</a>
+            </li> -->
+          </ul>
+        </div>
+    </nav>
+
+
+    <h3>Create an account and explore:</h3>
+    <div class="login-form">
+        <br/>
+        <form id="login-form" form method="POST" action="/home">
+            <div class="form-group">
+                <label for="exampleUserName">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">[ We'll never share your email with anyone else. ]</small>
+            </div>
+            <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            const email = document.getElementById('email').value; 
+            const password = document.getElementById('password').value;
+            const username = document.getElementById('username').value;
+
+            const userData = {
+                username: username,
+                email: email,
+                password: password
+            };
+
+            // Make a POST request to the server
+            fetch('/input_goal', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = "/input_goal";
+                } else if (response.status === 404) {
+                    window.location.href = "/";
+                    alert("Username or email already exists!")
+                }
+                else {
+                    console.error('Error:', response.statusText);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error.message);
+            });
+            
+        });
+
+    </script>
+
+
+   
+
+    <!-- Add Bootstrap JS and jQuery scripts here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <footer class="footer">
+       <p>&copy; 2023 Annemarie Xia. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,331 @@
+
+body {
+    font-family: Manrope, sans-serif;
+    background-color: #fdfcf9;
+
+    width: 100%;
+    height: 100%;
+
+}
+
+.navbar-brand {
+    font: bold;
+}
+
+.navbar {
+    background-color: #1B4242;
+    color: white;
+}
+
+.nav-link {
+    color: #004225;
+}
+
+
+.nav-item.active .nav-link {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.input-text::placeholder {
+  color: #d6d4d4;
+}
+
+p {
+    color: black;
+    font-size: large;
+    font-weight: 500;
+
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    padding-left: 0.4vw;
+    padding-top: 0.5vw;
+    border-color: #1B4242;
+}
+
+
+.btn-div {
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.login-form{
+  width: 28%;
+  position: absolute;
+  right: 5%;
+  top: 30%;
+}
+
+form#login-form {
+  width: 75%;
+  height: 100%;
+  padding: 5%;
+  border-radius: 0.45rem; 
+  background: linear-gradient(to left, rgb(196, 228, 219),#bce2d9);
+  
+}
+
+.footer {
+    position: fixed;
+    bottom: 0.5rem;
+    right: 2rem;
+    color: #004225;
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+.btn.btn-primary{
+    background-color: #169094; /* Change to your preferred background color */
+    color: #fff; /* Set text color to white or a contrasting color */
+    display: absolute;
+    bottom: 10vh;
+  }
+
+
+.btn-primary:hover {
+    background-color: #fff; /* Change to your preferred hover background color */
+    color: #169094; /* Set text color to white or a contrasting color */
+    border-width: 0.15rem;
+    border-color: #169094;
+    font-weight: 550;
+  }
+
+.navbar-brand {
+    font: bold;
+}
+
+
+.nav-link {
+    color: white;
+}
+
+.nav-item.active .nav-link {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.welcome-user {
+    font-weight: 600;
+    color: white;
+    
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    background-color: #c9f0e7;
+    color: black;
+    border-radius: 0.45rem;
+    padding: 0.2rem 0.2=5rem;
+    font-weight: 550;
+}
+
+.landing-block {
+    position: absolute;
+    top: 5rem;
+    left: 5%;
+    width: 60%;
+    height: 47rem;
+    border-radius: 0.2rem;
+}
+
+
+p#first {
+    color: #5f574c;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    font-size: 2rem;
+    text-shadow: 2px 2px 2px #cac3c3;
+    font-family: Georgia, sans-serif;
+    font-size: 4em;
+    letter-spacing: -2px;
+
+}
+
+p#second {
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    position: absolute;
+    top: 11%;
+    left: 20%;
+    font-size: 1.5rem;
+    font-family: "Arial Black", sans-serif;
+    font-size: 2em;
+    letter-spacing: -0.5px;
+    background-color: #68968a;
+    color: white;
+    padding: 0% 1%;
+    display: inline-block;
+    border-radius: 1.5rem;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(2, 0fr); /* Adjust the number of columns as needed */
+    gap: 0.5rem;
+    position: absolute;
+    top: 18%;
+    left: 8%;
+  }
+  
+  .images img {
+    width: 28vw; 
+    height: auto; 
+    border-radius: 8px; 
+  }
+  
+.input-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+
+  .gsi-material-button {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-appearance: none;
+    background-color: WHITE;
+    background-image: none;
+    border: 1px solid #747775;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #1f1f1f;
+    cursor: pointer;
+    font-family: 'Roboto', arial, sans-serif;
+    font-size: 14px;
+    height: 2.5rem;
+    width: 50%;
+    letter-spacing: 0.25px;
+    outline: none;
+    overflow: hidden;
+    padding: 0 12px;
+    /* display: flex;
+    justify-content: center; */
+    position: relative;
+    text-align: center;
+    -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
+    transition: background-color .218s, border-color .218s, box-shadow .218s;
+    vertical-align: middle;
+    white-space: nowrap;
+    min-width: min-content;
+    max-width: 25vw;
+
+  }
+  
+  .gsi-material-button .gsi-material-button-icon {
+    height: 20px;
+    margin-right: 12px;
+    min-width: 20px;
+    width: 20px;
+  }
+  
+  .gsi-material-button .gsi-material-button-content-wrapper {
+    -webkit-align-items: center;
+    align-items: center;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+  }
+  
+  .gsi-material-button .gsi-material-button-contents {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    font-family: 'Roboto', arial, sans-serif;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+  }
+  
+  .gsi-material-button .gsi-material-button-state {
+    -webkit-transition: opacity .218s;
+    transition: opacity .218s;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .gsi-material-button:disabled {
+    cursor: default;
+    background-color: #ffffff61;
+    border-color: #169094;
+  }
+  
+  .gsi-material-button:disabled .gsi-material-button-contents {
+    opacity: 38%;
+  }
+  
+  .gsi-material-button:disabled .gsi-material-button-icon {
+    opacity: 38%;
+  }
+  
+  .gsi-material-button:not(:disabled):active .gsi-material-button-state, 
+  .gsi-material-button:not(:disabled):focus .gsi-material-button-state {
+    background-color: #303030;
+    opacity: 12%;
+  }
+  
+  .gsi-material-button:not(:disabled):hover {
+    -webkit-box-shadow: 0 1px 2px 0 #7ad3d6, 0 1px 3px 1px #169094;
+    box-shadow: 0 1px 2px 0 #7ad3d6, 0 1px 3px 1px  #169094;
+
+
+  }
+  
+  .gsi-material-button:not(:disabled):hover .gsi-material-button-state {
+    background-color: #303030;
+    opacity: 8%;
+  }
+
+  .separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 0.75rem;
+    padding-bottom: 3%;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+  }
+  
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+  
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }

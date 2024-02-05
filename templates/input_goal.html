@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/inputGoalForm.css') }}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="{{ url_for('static', filename='InputGoalForm.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/inputGoalForm.css') }}">
+    
+    <title>CookEaseAI</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <span class="navbar-brand mb-0 h1">CookEaseAI</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/view_nutrition_info">View Nutrition Info</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown"> <!-- Add the 'dropdown' class to create a dropdown -->
+                    <a class="nav-link dropdown-toggle welcome-user" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Welcome, {{ username }}!
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <!-- Dropdown items go here -->
+                        <a class="dropdown-item" href="#">Setting</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div className="main-container">
+      <h3>Welcome {{ username }}, enter your nutrition goal below:</h3>
+      <div class="input-form">
+        <br/>
+        <form id="input-form">
+            <div class="form-group">
+                <label for="goalCalorie">Total Calorie Per Day</label>
+                <div class="col-sm-6 d-flex align-items-center">
+                    <input type="text" class="form-control" id="calorie-goal" autocomplete="off" onChange="{(e) => setCalorieGoal(e.target.value)}" />
+                    <br/>
+                    <p class="ml-2 my-auto">cal</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="goalCalorie">Total Carbohydrates Per Day</label>
+                <div class="col-sm-7 d-flex align-items-center">
+                    <input type="text" class="form-control" id="carb-goal" autocomplete="off" onChange="{(e) => setCarbGoal(e.target.value)}" />
+                    <br/>
+                    <p class="ml-2 my-auto">grams</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="goalCalorie">Total Protein Per Day</label>
+                <div class="col-sm-7 d-flex align-items-center">
+                    <input type="text" class="form-control" id="protein-goal" autocomplete="off" onChange="{(e) => setProteinGoal(e.target.value)}" />
+                    <br/>
+                    <p class="ml-2 my-auto">grams</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="goalCalorie">Total Fat Per Day</label>
+                <div class="col-sm-7 d-flex align-items-center">
+                    <input type="text" class="form-control" id="fat-goal" autocomplete="off" onChange="{(e) => setFatGoal(e.target.value)}" />
+                    <br/>
+                    <p class="ml-2 my-auto">grams</p>
+                </div>
+            </div>
+            <div class="btn-div">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+            <input type="hidden" name="email" id="email" value={{email}}/>
+            <input type="hidden" name="username" id="username" value={{username}}/>
+        </form>
+        <div class="image-container">
+              <img class="nutrition-img" src="/static/inputGoal.jpeg" alt="Nutrition Image" />
+        </div>
+      </div>      
+    </div>
+  </body>
+</html>

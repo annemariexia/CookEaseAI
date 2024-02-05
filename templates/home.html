@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/homePage.css') }}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="{{ url_for('static', filename='homePage.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/homePage.css') }}">
+    
+    <title>CookEaseAI</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <span class="navbar-brand mb-0 h1">CookEaseAI</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/view_nutrition_info">View Nutrition Info</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown"> <!-- Add the 'dropdown' class to create a dropdown -->
+                    <a class="nav-link dropdown-toggle welcome-user" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Welcome, {{ username }}!
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <!-- Dropdown items go here -->
+                        <a class="dropdown-item" href="#">Setting</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="main-container">
+        <div class="row">
+            <div>
+                <div class="form-container">
+                    <form id="ingredientForm" class={`${buttonClicked ? 'form-container-clicked' : 'form-container-1'}`} action="/getIngredients" method="POST">
+                        <div class="form-group">
+                            <label for="ingredients">Enter the ingredients you have:</label>
+                            <input type="text" class="form-control input-text" id="ingredients" name="ingredients" autocomplete="off" placeholder="salmon fillet, ground beef, pork chop..."/>
+                        </div>
+                        <div class="form-group">
+                            <label for="cuisine">Enter the cuisine you want:</label>
+                            <input type="text" class="form-control input-text" id="cuisine" name="cuisine" autocomplete="off" placeholder="italian, japanese, new american..."/>
+                        </div>
+                        <div class="form-group">
+                            <label for="foodType">Select a Food Type:</label>
+                            <select class="form-control" id="foodType" name="foodType">
+                                <option value="any">Any</option>
+                                <option value="appetizer">Appetizer</option>
+                                <option value="entree">Entree</option>
+                                <option value="dessert">Dessert</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="portions">Select the number of people:</label>
+                            <select class="form-control" id="portions" name="portions">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4+">4+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="allergens">Allergens/Ingredients to avoid:</label>
+                            <input type="text" class="form-control input-text" id="allergens" autocomplete="off" name="allergens" placeholder="tree nuts, gluten..."/>
+                        </div>
+                <button type="submit" class="btn btn-primary" id="recipeButton" onClick={handleButtonClick} >Get a delicious recipe!</button>
+
+
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

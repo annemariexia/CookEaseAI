@@ -1,0 +1,166 @@
+body {
+    font-family: Manrope, sans-serif;
+    background-color: #fdfcf9;
+}
+
+.main-container {
+    padding-top: 80px;
+    padding-left: 150px;
+    font-family: 'Manrope', sans-serif;
+}
+.heading {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+/* .form-container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+} */
+
+.recipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.recipe-item-container {
+    /*flex: 1 1 25%;*/
+    text-align: center;
+    margin: 10px;
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Add an ellipsis (...) for overflow */
+    border: 1px solid #ccc; /* Add a border to better visualize the container */
+    padding: 1rem;
+    background-color: #E4E4D0;
+    border-radius: 0.25rem;
+}
+
+/* .welcome-user {
+    font-weight: 600;
+    color: #2E8A99;
+    
+} */
+
+
+
+h3 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    padding-left: 14.75rem;
+    padding-top: 4rem;
+    color: #2E8A99;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.5rem;
+    /* position: absolute;
+    left: 11rem;
+    top: 6rem; */
+}
+
+.btn-div {
+    display: inline;
+    position: relative;
+    left: 0.75rem;
+}
+
+
+form#input-form {
+    width: 25%;
+    height: 60%;
+    position: absolute;
+    left: 25em;
+    top: 12rem;
+    padding: 2%;
+    position: absolute;
+    left: 20%;
+}
+
+.image-container{
+    position: absolute;
+    right: 15%;
+    top: 30%;
+}
+
+img.nutrition-img{
+    height: 50vh;
+    width: auto;
+    border-radius: 0.5rem;
+}
+
+
+.navbar-brand {
+    font: bold;
+}
+
+.navbar {
+    background-color: #1B4242;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    background-color: #004225;
+    color: #E4E4D0;
+    border-radius: 0.25rem;
+}
+
+.nav-item.active .nav-link {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar .navbar-nav .nav-link:hover {
+    background-color: #FDFAEC;
+    color: black;
+    border-radius: 0.45rem;
+}
+
+.welcome-user {
+    font-weight: 600;
+    color: white;
+    
+}
+
+.btn-primary {
+    background-color: #169094; /* Change to your preferred background color */
+    color: #fff; /* Set text color to white or a contrasting color */
+  }
+  
+.btn-primary:hover {
+    background-color: #fff; /* Change to your preferred hover background color */
+    color: #169094; /* Set text color to white or a contrasting color */
+    border-width: 0.15rem;
+    border-color: #169094;
+    font-weight: 550;
+}
+
+.dropdown-menu {
+    background-color: #f1f5e8; /* Background color */
+
+}
+
+.dropdown-item {
+    color:#004225;
+    font-size: medium;
+    font-weight: 550;
+}
+
+/* Style the hover effect for dropdown items */
+.dropdown-item:hover {
+    background-color: #e9ecef; /* Change background color on hover */
+}
